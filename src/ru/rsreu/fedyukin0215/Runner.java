@@ -17,7 +17,7 @@ public class Runner {
 
 		String[] stringArray = new String[stringCount];
 		for (int i = 0; i < stringArray.length; i++) {
-			System.out.println("Enter " + (i + 1) + " string: ");
+			System.out.printf("Enter %d string: ", i + 1);
 			stringArray[i] = in.nextLine();
 		}
 
@@ -28,7 +28,7 @@ public class Runner {
 		 */
 		String[] resultArray = StringHandler.stringArrayHandle(stringArray);
 		for (int i = 0; i < resultArray.length; i++) {
-			System.out.println("String " + (i + 1) + ": " + resultArray[i]);
+			System.out.printf("String %d: %s \n", i + 1, resultArray[i]);
 		}
 
 	}
