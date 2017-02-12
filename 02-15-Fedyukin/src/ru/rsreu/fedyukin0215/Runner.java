@@ -1,6 +1,5 @@
 package ru.rsreu.fedyukin0215;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Runner {
