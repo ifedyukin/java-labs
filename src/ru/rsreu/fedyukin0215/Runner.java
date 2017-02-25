@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class Runner {
 
+	private Runner() {
+	}
+
 	public static void main(String[] args) {
 
 		/*
@@ -26,14 +29,12 @@ public class Runner {
 		/*
 		 * Output
 		 */
-		String[] resultArray = StringHandler.stringArrayHandle(stringArray);
+		String[] resultArray = EvenNumsStringsFinder
+				.stringsHandler(stringArray);
 		for (int i = 0; i < resultArray.length; i++) {
 			System.out.printf("String %d: %s \n", i + 1, resultArray[i]);
 		}
 
-	}
-
-	private Runner() {
 	}
 
 }
