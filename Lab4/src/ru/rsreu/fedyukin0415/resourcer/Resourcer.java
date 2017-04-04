@@ -1,4 +1,4 @@
-package ru.rsreu.fedyukin0315;
+package ru.rsreu.fedyukin0415.resourcer;
 
 import java.util.Locale;
 import java.util.MissingResourceException;
