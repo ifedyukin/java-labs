@@ -1,13 +1,12 @@
 package ru.rsreu.fedyukin0515;
 
 import java.util.Comparator;
-import ru.rsreu.fedyukin0515.Tax;
 
 public class Comparators {	
 	private static final double TAX_PERCENT = 13;
 	private static final double MAX_PERCENT = 100;
 	
-	public Comparators(){
+	private Comparators() {
 	}
 	
 	/*

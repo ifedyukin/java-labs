@@ -1,18 +1,15 @@
 package ru.rsreu.fedyukin0515;
 
 import ru.rsreu.fedyukin0515.resourcer.Resourcer;
-import ru.rsreu.fedyukin0515.taxation.Copyright;
-import ru.rsreu.fedyukin0515.taxation.Direct;
-import ru.rsreu.fedyukin0515.taxation.Transfer;
+import ru.rsreu.fedyukin0515.taxation.*;
 
 public class Initializer {
-	private static final double REFUND_PERCENT = 10;
 
-	public Initializer() {
+	private Initializer() {
 	}
 
 	public static TaxList getTaxList() {
-		Exemption exemption = new Exemption(REFUND_PERCENT);
+		Exemption exemption = new Exemption(TaxConstants.REFUND_PERCENT);
 		exemption.setDescription(Resourcer.getString("message.exemptionDescription"));
 
 		Tax[] taxation = { 
