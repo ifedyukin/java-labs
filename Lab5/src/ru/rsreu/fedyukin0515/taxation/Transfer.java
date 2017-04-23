@@ -6,9 +6,10 @@ import ru.rsreu.fedyukin0515.Exemption;
 
 public class Transfer extends Tax {
 	private boolean isGift;
+	private static final double TAX_PERCENT = 13;
 	
 	public Transfer(double incomeSum, Exemption exemption, boolean isGift) {
-		super(13, incomeSum, exemption);
+		super(TAX_PERCENT, incomeSum, exemption);
 		this.isGift = isGift;
 	}
 	
@@ -33,7 +34,7 @@ public class Transfer extends Tax {
 		result.append(this.getType())
 			.append("\n\t").append(Resourcer.getString("message.income")).append(super.getIncomeSum())
 			.append("\t").append(Resourcer.getString("message.sum")).append(this.calculateTaxSum())
-			.append("\t").append(Resourcer.getString("message.percent")).append(this.isGift ? "0" : "13").append("\n");
+			.append("\t").append(Resourcer.getString("message.percent")).append(this.isGift ? 0 : TAX_PERCENT).append("\n");
 		
 		return result.toString();
 	}

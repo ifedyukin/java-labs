@@ -7,8 +7,11 @@ public abstract class Tax {
 	private double incomeSum;
 	private Exemption exemption;
 	
+	private static final double MAX_PERCENT = 100;
+	private static final double MIN_PERCENT = 0;
+	
 	public Tax(double percent, double incomeSum, Exemption exemption) {
-		if (percent < 100 && percent > 0) {
+		if (percent < MAX_PERCENT && percent > MIN_PERCENT) {
 			this.percent = percent;			
 		} else {
 			throw new IllegalArgumentException(Resourcer.getString("error.incorrectPercent"));
@@ -19,7 +22,7 @@ public abstract class Tax {
 	}
 	
 	public double calculateTaxSum() {
-		return this.incomeSum * this.percent / 100;
+		return this.incomeSum * this.percent / MAX_PERCENT;
 	}
 	
 	public double calculateRefund(double fullTaxSum) {
@@ -27,7 +30,7 @@ public abstract class Tax {
 			throw new IllegalArgumentException(Resourcer.getString("error.incorrectTaxSum"));
 		}
 		
-		return fullTaxSum * this.exemption.getPercent() / 100;
+		return fullTaxSum * this.exemption.getPercent() / MAX_PERCENT;
 	}
 	
 	public abstract String getType();

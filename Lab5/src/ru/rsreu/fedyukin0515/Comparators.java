@@ -3,7 +3,13 @@ package ru.rsreu.fedyukin0515;
 import java.util.Comparator;
 import ru.rsreu.fedyukin0515.Tax;
 
-public class Comparators {
+public class Comparators {	
+	private static final double TAX_PERCENT = 13;
+	private static final double MAX_PERCENT = 100;
+	
+	public Comparators(){
+	}
+	
 	/*
 	 * Sorting by type of tax
 	 */
@@ -27,7 +33,7 @@ public class Comparators {
 	 */
 	public static Comparator<Tax> findBySum = new Comparator<Tax>() {
 		public int compare(Tax o1, Tax o2) {
-			return (int) (o1.calculateTaxSum() - o2.calculateTaxSum()) / 13 * 100;
+			return (int) ((int) (o1.calculateTaxSum() - o2.calculateTaxSum()) / TAX_PERCENT * MAX_PERCENT);
 		}
 	};
 }

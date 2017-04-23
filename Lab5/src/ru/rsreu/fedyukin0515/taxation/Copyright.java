@@ -7,9 +7,12 @@ import ru.rsreu.fedyukin0515.Exemption;
 public class Copyright extends Tax {
 	private boolean isResident;
 	private double incomeSum;
+	private static final double TAX_PERCENT = 20;
+	private static final double MAX_TAX_PERCENT = 30;
+	private static final double MAX_PERCENT = 100;
 
 	public Copyright(double incomeSum, Exemption exemption, boolean isResident) {
-		super(13, incomeSum, exemption);
+		super(TAX_PERCENT, incomeSum, exemption);
 
 		this.incomeSum = incomeSum;
 		this.isResident = isResident;
@@ -22,7 +25,7 @@ public class Copyright extends Tax {
 		if (this.isResident) {
 			return fullTaxSum - super.calculateRefund(fullTaxSum);
 		} else {
-			return fullTaxSum + this.incomeSum * 0.17;
+			return fullTaxSum + this.incomeSum * (MAX_TAX_PERCENT - TAX_PERCENT) / MAX_PERCENT;
 		}
 	}
 	
@@ -37,7 +40,7 @@ public class Copyright extends Tax {
 		result.append(this.getType())
 			.append("\n\t").append(Resourcer.getString("message.income")).append(super.getIncomeSum())
 			.append("\t").append(Resourcer.getString("message.sum")).append(this.calculateTaxSum())
-			.append("\t").append(Resourcer.getString("message.percent")).append(this.isResident ? "13" : "30").append("\n");
+			.append("\t").append(Resourcer.getString("message.percent")).append(this.isResident ? TAX_PERCENT : MAX_TAX_PERCENT).append("\n");
 		
 		return result.toString();
 	}

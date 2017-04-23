@@ -5,8 +5,10 @@ import ru.rsreu.fedyukin0515.resourcer.Resourcer;
 import ru.rsreu.fedyukin0515.Exemption;
 
 public class Direct extends Tax {
+	private static final double PERCENT = 13;
+	
 	public Direct(double incomeSum, Exemption exemption) {
-		super(13, incomeSum, exemption);
+		super(PERCENT, incomeSum, exemption);
 	}
 
 	@Override
@@ -26,7 +28,7 @@ public class Direct extends Tax {
 		result.append(this.getType())
 			.append("\n\t").append(Resourcer.getString("message.income")).append(super.getIncomeSum())
 			.append("\t").append(Resourcer.getString("message.sum")).append(this.calculateTaxSum())
-			.append("\t").append(Resourcer.getString("message.percent")).append("13").append("\n");
+			.append("\t").append(Resourcer.getString("message.percent")).append(PERCENT).append("\n");
 
 		return result.toString();
 	}
