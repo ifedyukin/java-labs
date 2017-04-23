@@ -3,13 +3,14 @@ package ru.rsreu.fedyukin0415;
 import ru.rsreu.fedyukin0415.resourcer.Resourcer;
 import com.prutzkow.twodimarray.TwoDimArray;
 
-public class SumOfRowsWithMaxElementsCalulator extends TwoDimArray {
+public class RowsWithMaxElementsSumCalсulator extends TwoDimArray {
 
-	public SumOfRowsWithMaxElementsCalulator(int... sizes) {
+	public RowsWithMaxElementsSumCalсulator(int... sizes) {
 		super(sizes);
 	}
 
 	/**
+	 * This method return maximal element of arrayBody
 	 * 
 	 * @return Max element of array.
 	 */
@@ -28,6 +29,8 @@ public class SumOfRowsWithMaxElementsCalulator extends TwoDimArray {
 	}
 
 	/**
+	 * This method check the array and return true if the array contains the element
+	 * 
 	 * @param array
 	 *            - array of integer whose will be checked for contain "element"
 	 *            from parameters.
@@ -47,6 +50,8 @@ public class SumOfRowsWithMaxElementsCalulator extends TwoDimArray {
 	}
 
 	/**
+	 * This method calculate sum of elements of the array
+	 * 
 	 * @param array
 	 *            - integer array for calculate sum of elements.
 	 * @return Sum of array element.
@@ -68,7 +73,7 @@ public class SumOfRowsWithMaxElementsCalulator extends TwoDimArray {
 	 *         row. Pattern: "resource.message" *row number*: *sum row
 	 *         elements*. Example: Sum of string 2: 32.
 	 */
-	public String sumOfStringsWithMaxElements() {
+	public String summStringsWithMaxElements() {
 		StringBuilder result = new StringBuilder();
 		int maxElement = getMaxElement();
 
@@ -84,7 +89,6 @@ public class SumOfRowsWithMaxElementsCalulator extends TwoDimArray {
 		}
 		
 		return result.toString();
-
 	}
 
 	/**

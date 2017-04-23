@@ -5,8 +5,8 @@ import ru.rsreu.fedyukin0415.resourcer.Resourcer;
 
 public class Runner {
 
-	public static int MAX_RANGE_VALUE = 10;
-	public static int MIN_RANGE_VALUE = 0;
+	public static final int MAX_RANGE_VALUE = 10;
+	public static final int MIN_RANGE_VALUE = 0;
 	
 	private Runner() {
 	}
@@ -17,13 +17,13 @@ public class Runner {
 		Locale.setDefault(Locale.US);
 		result = new StringBuilder();
 
-		SumOfRowsWithMaxElementsCalulator arrayObject = new SumOfRowsWithMaxElementsCalulator(3, 5, 0, 4, 2, 2, 7);
+		RowsWithMaxElementsSumCalсulator arrayObject = new RowsWithMaxElementsSumCalсulator(3, 5, 0, 4, 2, 2, 7);
 		arrayObject.fill(MIN_RANGE_VALUE, MAX_RANGE_VALUE);
 		
 		result.append(Resourcer.getString("message.origin")).append("\n").append(arrayObject).append("\n\n");
 
 		result.append(Resourcer.getString("message.worked")).append("\n")
-				.append(arrayObject.sumOfStringsWithMaxElements());
+				.append(arrayObject.summStringsWithMaxElements());
 
 		System.out.println(result);
 
